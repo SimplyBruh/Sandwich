@@ -1,0 +1,152 @@
+<!DOCTYPE html> <html><head>
+        <title>Sandwich</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap" rel="stylesheet">
+    <style>body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #17d3ff;
+    text-align: center;
+    
+}
+.questions{font-size:30px;}
+.title{
+font-size:30px;}
+.start{
+width:200px;
+height:100px;
+background-color:turquoise;}
+img {
+    width: 400px;
+
+}
+
+.gif {
+    display: none;
+}
+
+.message {
+    border: groove grey 2px;
+    height: 325px;
+    margin: 10px;
+    padding: 5px;
+    display: none;
+}
+
+.question1 {display:none;}
+
+.result {
+    display: none;
+}
+
+.what {
+    display: none;
+}</style></head>
+    <body>
+        <div class="title">
+            <h1 class="head">What Kind of Sandwich are You?</h1>
+            <button class="start">Start Quiz!</button>
+        </div>
+        <div class="question1">
+            <h4 class="questions">How old are you?</h4>
+            <img src="https://img.freepik.com/free-vector/different-ages-people-characters_102902-2344.jpg?w=2000">
+            <input class="input">
+            <p>
+                <button class="enter">Enter</button>
+            </p>
+        </div>
+        <div class="what">
+            <h4 class="questions">Do you think a sandwich needs bread?</h4>
+            <img src="https://media.istockphoto.com/id/499491348/photo/hot-dog-various-sandwiches-pizza-and-a-question-mark.jpg?s=170667a&amp;w=0&amp;k=20&amp;c=N4sZ7S6yshTjBMAoq9A0AcpM1dQu06-_uskkx--Nogw=">
+            <p><button class="choice3">Yes</button>
+                <button class="choice4">No</button>
+            </p>
+        </div>
+        <div class="message">
+            <p class="para">
+                
+            </p>
+                    <img class="endimg" src="something">
+            <img class="gif" src="https://img.buzzfeed.com/buzzfeed-static/static/2015-05/22/7/enhanced/webdr10/anigif_enhanced-buzz-24744-1432295601-5.gif">
+
+        </div>
+
+
+
+    
+<script>
+/*__POPCODESTART__*/
+var title = document.querySelector(".title");
+var head = document.querySelector(".head");
+var question = document.querySelector(".questions");
+var question1 = document.querySelector(".question1");
+var question2 = document.querySelector(".question2");
+var choice1 = document.querySelector(".choice1");
+var choice2 = document.querySelector(".choice2");
+var choice3 = document.querySelector(".choice3");
+var choice4 = document.querySelector(".choice4");
+var result = document.querySelector(".result");
+var enter = document.querySelector(".enter");
+var message = document.querySelector(".message");
+var endimg = document.querySelector(".endimg");
+var para = document.querySelector(".para");
+var what = document.querySelector(".what");
+var input;
+var start = document.querySelector(".start");
+
+start.onclick = function () {
+  document.querySelector(".start").style = "display:none";
+  document.querySelector(".title").style = "display:none";
+  document.querySelector(".question1").style = "display:block";
+};
+
+enter.onclick = function () {
+  input = document.querySelector(".input").value;
+
+  if (input <= 25 || input >= 25) {
+    document.querySelector(".question1").style = "display:none";
+    document.querySelector(".what").style = "display:block";
+  } else {
+    para.innerHTML = "You are an idiot sandwich!";
+    document.querySelector(".gif").style = "display:block";
+    document.querySelector(".question1").style = "display:none";
+    document.querySelector(".message").style = "display:block";
+    document.querySelector(".endimg").style = "display:none";
+  }
+};
+
+choice3.onclick = function () {
+  document.querySelector(".what").style = "display:none";
+
+  if (input < 25) {
+    document.querySelector(".message").style = "display:block";
+    para.innerHTML = "Because you are " + input + " years old and think bread is needed on a sandwich, you are a hotdog!";
+    endimg.src = "https://www.tastingtable.com/img/gallery/13-best-hot-dogs-in-america/intro-1660217636.jpg";
+  } else if (input >= 25) {
+    document.querySelector(".message").style = "display:block";
+    para.innerHTML = "Because you are " + input + " years old and think bread is needed on a sandwich, you are a ham sandwich!";
+    endimg.src = "https://scm-assets.constant.co/scm/unilever/e9dc924f238fa6cc29465942875fe8f0/487d5b32-2806-4a2d-8aa9-3b4e34ed06d7.jpg";
+  } else {
+    para.innerHTML = "You are an idiot sandwich!";
+    document.querySelector(".gif").style = "display:block";
+    document.querySelector(".endimg").style = "display:none";
+  }
+};
+
+choice4.onclick = function () {
+  document.querySelector(".what").style = "display:none";
+
+  if (input < 25) {
+    para.innerHTML = "Because you are " + input + " years old and think bread is not needed on a sandwich, you are a taco!";
+    endimg.src = "https://images-gmi-pmc.edge-generalmills.com/e59f255c-7498-4b84-9c9d-e578bf5d88fc.jpg";
+    document.querySelector(".message").style = "display:block";
+  } else if (input >= 25) {
+    para.innerHTML = "Because you are " + input + " years old and think bread is not needed on a sandwich, you are a burrito!";
+    endimg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Burrito.JPG/640px-Burrito.JPG";
+    document.querySelector(".message").style = "display:block";
+  } else {
+    document.querySelector(".endimg").style = "display:none";
+    para.innerHTML = "You are an idiot sandwich!";
+    document.querySelector(".gif").style = "display:block";
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbInRpdGxlIiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwiaGVhZCIsInF1ZXN0aW9uIiwicXVlc3Rpb24xIiwicXVlc3Rpb24yIiwiY2hvaWNlMSIsImNob2ljZTIiLCJjaG9pY2UzIiwiY2hvaWNlNCIsInJlc3VsdCIsImVudGVyIiwibWVzc2FnZSIsImVuZGltZyIsInBhcmEiLCJ3aGF0IiwiaW5wdXQiLCJzdGFydCIsIm9uY2xpY2siLCJzdHlsZSIsInZhbHVlIiwiaW5uZXJIVE1MIiwic3JjIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxLQUFLLEdBQUdDLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixRQUF2QixDQUFaO0FBQ0EsSUFBSUMsSUFBSSxHQUFHRixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsT0FBdkIsQ0FBWDtBQUNBLElBQUlFLFFBQVEsR0FBR0gsUUFBUSxDQUFDQyxhQUFULENBQXVCLFlBQXZCLENBQWY7QUFDQSxJQUFJRyxTQUFTLEdBQUdKLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixZQUF2QixDQUFoQjtBQUNBLElBQUlJLFNBQVMsR0FBR0wsUUFBUSxDQUFDQyxhQUFULENBQXVCLFlBQXZCLENBQWhCO0FBQ0EsSUFBSUssT0FBTyxHQUFHTixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsQ0FBZDtBQUNBLElBQUlNLE9BQU8sR0FBR1AsUUFBUSxDQUFDQyxhQUFULENBQXVCLFVBQXZCLENBQWQ7QUFDQSxJQUFJTyxPQUFPLEdBQUdSLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixVQUF2QixDQUFkO0FBQ0EsSUFBSVEsT0FBTyxHQUFHVCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsQ0FBZDtBQUNBLElBQUlTLE1BQU0sR0FBR1YsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLENBQWI7QUFDQSxJQUFJVSxLQUFLLEdBQUdYLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixRQUF2QixDQUFa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QUF1QyxlQUF2QztBQUNDbkIsSUFBQUEsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLEVBQWtDa0IsS0FBbEMsR0FBd0MsY0FBeEM7QUFDSjtBQUNKLENBYkQ7O0FBY0FWLE9BQU8sQ0FBQ1MsT0FBUixHQUFrQixZQUFXO0FBQ3pCbEIsRUFBQUEsUUFBUSxDQUFDQyxhQUFULENBQXVCLE9BQXZCLEVBQWdDa0IsS0FBaEMsR0FBc0MsY0FBdEM7O0FBQ0EsTUFBSUgsS0FBSyxHQUFHLEVBQVosRUFBZ0I7QUFDWkYsSUFBQUEsSUFBSSxDQUFDTyxTQUFMLEdBQWlCLHFCQUFtQkwsS0FBbkIsR0FBeUIseUVBQTFDO0FBQ0FILElBQUFBLE1BQU0sQ0FBQ1MsR0FBUCxHQUFXLHVGQUFYO0FBQ1J0QixJQUFBQSxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsRUFBbUNrQixLQUFuQyxHQUF5QyxlQUF6QztBQUNLLEdBSkQsTUFJTyxJQUFJSCxLQUFLLElBQUksRUFBYixFQUFpQjtBQUNwQkYsSUFBQUEsSUFBSSxDQUFDTyxTQUFMLEdBQWlCLHFCQUFtQkwsS0FBbkIsR0FBeUIsNEVBQTFDO0FBQ0FILElBQUFBLE1BQU0sQ0FBQ1MsR0FBUCxHQUFXLHlGQUFYO0FBQ1J0QixJQUFBQSxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsRUFBbUNrQixLQUFuQyxHQUF5QyxlQUF6QztBQUNLLEdBSk0sTUFJQTtBQUNIbkIsSUFBQUEsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLEVBQWtDa0IsS0FBbEMsR0FBd0MsY0FBeEM7QUFDQUwsSUFBQUEsSUFBSSxDQUFDTyxTQUFMLEdBQWlCLDRCQUFqQjtBQUNBckIsSUFBQUEsUUFBUSxDQUFDQyxhQUFULENBQXVCLE1BQXZCLEVBQStCa0IsS0FBL0IsR0FBdUMsZUFBdkM7QUFDSDtBQUNKLENBZkQiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgdGl0bGUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnRpdGxlXCIpO1xubGV0IGhlYWQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmhlYWRcIik7XG5sZXQgcXVlc3Rpb24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnF1ZXN0aW9uc1wiKTtcbmxldCBxdWVzdGlvbjEgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnF1ZXN0aW9uMVwiKTtcbmxldCBxdWVzdGlvbjIgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnF1ZXN0aW9uMlwiKTtcbmxldCBjaG9pY2UxID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5jaG9pY2UxXCIpO1xubGV0IGNob2ljZTIgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmNob2ljZTJcIik7XG5sZXQgY2hvaWNlMyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuY2hvaWNlM1wiKTtcbmxldCBjaG9pY2U0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5jaG9pY2U0XCIpO1xubGV0IHJlc3VsdCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmVzdWx0XCIpO1xubGV0IGVudGVyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5lbnRlclwiKTtcbmxldCBtZXNzYWdlID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5tZXNzYWdlXCIpO1xubGV0IGVuZGltZz1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmVuZGltZ1wiKTtcbmxldCBwYXJhID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5wYXJhXCIpO1xubGV0IHdoYXQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLndoYXRcIik7XG5sZXQgaW5wdXQ7XG5sZXQgc3RhcnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnN0YXJ0XCIpO1xuc3RhcnQub25jbGljaz1mdW5jdGlvbigpe1xuZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5zdGFydFwiKS5zdHlsZT1cImRpc3BsYXk6bm9uZVwiO1xuZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi50aXRsZVwiKS5zdHlsZT1cImRpc3BsYXk6bm9uZVwiO1xuZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5xdWVzdGlvbjFcIikuc3R5bGU9XCJkaXNwbGF5OmJsb2NrXCI7fTtcbmVudGVyLm9uY2xpY2sgPSBmdW5jdGlvbigpIHtcbiAgICBpbnB1dCA9XG4gICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuaW5wdXRcIikudmFsdWU7XG5cbiAgICBpZiAoaW5wdXQgPD0gMjUgfHwgaW5wdXQgPj0gMjUpIHtcbiAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5xdWVzdGlvbjFcIikuc3R5bGUgPSBcImRpc3BsYXk6bm9uZVwiO1xuICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLndoYXRcIikuc3R5bGUgPSBcImRpc3BsYXk6YmxvY2tcIjtcbiAgICB9IGVsc2Uge1xuXG4gICAgICAgIHBhcmEuaW5uZXJIVE1MID0gXCJZb3UgYXJlIGFuIGlkaW90IHNhbmR3aWNoIVwiO1xuICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmdpZlwiKS5zdHlsZSA9IFwiZGlzcGxheTpibG9ja1wiO1xuICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnF1ZXN0aW9uMVwiKS5zdHlsZSA9IFwiZGlzcGxheTpub25lXCI7IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubWVzc2FnZVwiKS5zdHlsZT1cImRpc3BsYXk6YmxvY2tcIjtcbiAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuZW5kaW1nXCIpLnN0eWxlPVwiZGlzcGxheTpub25lXCI7XG5cblxuICAgIH1cbn07XG5jaG9pY2UzLm9uY2xpY2sgPSBmdW5jdGlvbigpIHsgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLndoYXRcIikuc3R5bGU9XCJkaXNwbGF5Om5vbmVcIjtcbiAgICBpZiAoaW5wdXQgPCAyNSkgeyBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm1lc3NhZ2VcIikuc3R5bGU9XCJkaXNwbGF5OmJsb2NrXCI7XG4gICAgICAgIHBhcmEuaW5uZXJIVE1MID0gXCJCZWNhdXNlIHlvdSBhcmUgXCIraW5wdXQrXCIgeWVhcnMgb2xkIGFuZCB0aGluayBicmVhZCBpcyBuZWVkZWQgb24gYSBzYW5kd2ljaCwgeW91IGFyZSBhIGhvdGRvZyFcIjtcbiAgICAgICAgICAgICAgICAgICAgIGVuZGltZy5zcmM9XCJodHRwczovL3d3dy50YXN0aW5ndGFibGUuY29tL2ltZy9nYWxsZXJ5LzEzLWJlc3QtaG90LWRvZ3MtaW4tYW1lcmljYS9pbnRyby0xNjYwMjE3NjM2LmpwZ1wiO1xuICAgIH0gZWxzZSBpZiAoaW5wdXQgPj0gMjUpIHtcbmRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubWVzc2FnZVwiKS5zdHlsZT1cImRpc3BsYXk6YmxvY2tcIjtcbiAgICAgICAgcGFyYS5pbm5lckhUTUwgPSBcIkJlY2F1c2UgeW91IGFyZSBcIitpbnB1dCtcIiB5ZWFycyBvbGQgYW5kIHRoaW5rIGJyZWFkIGlzIG5lZWRlZCBvbiBhIHNhbmR3aWNoLCB5b3UgYXJlIGEgaGFtIHNhbmR3aWNoIVwiO1xuICAgICAgICBlbmRpbWcuc3JjPVwiaHR0cHM6Ly9zY20tYXNzZXRzLmNvbnN0YW50LmNvL3NjbS91bmlsZXZlci9lOWRjOTI0ZjIzOGZhNmNjMjk0NjU5NDI4NzVmZThmMC80ODdkNWIzMi0yODA2LTRhMmQtOGFhOS0zYjRlMzRlZDA2ZDcuanBnXCI7XG4gICAgfSBlbHNlIHtcbiAgICAgICAgcGFyYS5pbm5lckhUTUwgPSBcIllvdSBhcmUgYW4gaWRpb3Qgc2FuZHdpY2ghXCI7XG4gICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuZ2lmXCIpLnN0eWxlID0gXCJkaXNwbGF5OmJsb2NrXCI7XG4gICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmVuZGltZ1wiKS5zdHlsZT1cImRpc3BsYXk6bm9uZVwiO1xuICAgIH1cbn07XG5jaG9pY2U0Lm9uY2xpY2sgPSBmdW5jdGlvbigpIHtcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLndoYXRcIikuc3R5bGU9XCJkaXNwbGF5Om5vbmVcIjtcbiAgICBpZiAoaW5wdXQgPCAyNSkge1xuICAgICAgICBwYXJhLmlubmVySFRNTCA9IFwiQmVjYXVzZSB5b3UgYXJlIFwiK2lucHV0K1wiIHllYXJzIG9sZCBhbmQgdGhpbmsgYnJlYWQgaXMgbm90IG5lZWRlZCBvbiBhIHNhbmR3aWNoLCB5b3UgYXJlIGEgdGFjbyFcIjtcbiAgICAgICAgZW5kaW1nLnNyYz1cImh0dHBzOi8vaW1hZ2VzLWdtaS1wbWMuZWRnZS1nZW5lcmFsbWlsbHMuY29tL2U1OWYyNTVjLTc0OTgtNGI4NC05YzlkLWU1NzhiZjVkODhmYy5qcGdcIjtcbmRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubWVzc2FnZVwiKS5zdHlsZT1cImRpc3BsYXk6YmxvY2tcIjtcbiAgICB9IGVsc2UgaWYgKGlucHV0ID49IDI1KSB7XG4gICAgICAgIHBhcmEuaW5uZXJIVE1MID0gXCJCZWNhdXNlIHlvdSBhcmUgXCIraW5wdXQrXCIgeWVhcnMgb2xkIGFuZCB0aGluayBicmVhZCBpcyBub3QgbmVlZGVkIG9uIGEgc2FuZHdpY2gsIHlvdSBhcmUgYSBidXJyaXRvIVwiO1xuICAgICAgICBlbmRpbWcuc3JjPVwiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy90aHVtYi82LzYwL0J1cnJpdG8uSlBHLzY0MHB4LUJ1cnJpdG8uSlBHXCI7XG5kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm1lc3NhZ2VcIikuc3R5bGU9XCJkaXNwbGF5OmJsb2NrXCI7XG4gICAgfSBlbHNlIHtcbiAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5lbmRpbWdcIikuc3R5bGU9XCJkaXNwbGF5Om5vbmVcIjtcbiAgICAgICAgcGFyYS5pbm5lckhUTUwgPSBcIllvdSBhcmUgYW4gaWRpb3Qgc2FuZHdpY2ghXCI7XG4gICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuZ2lmXCIpLnN0eWxlID0gXCJkaXNwbGF5OmJsb2NrXCI7XG4gICAgfVxufTsiXX0=</script></body></html>
